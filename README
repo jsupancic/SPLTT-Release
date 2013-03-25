@@ -1,0 +1,12 @@
+To actually get this beast to run on your computer, you'll probably have to 
+edit some of the matlab files in the config/ subdirectory.
+(1) config/datapath.m should return the path where you have your videos stored.
+    The path should point to a directory which includes a subdirectory for each video.
+    E.g. $(datapath)/tiger2/.
+    Each subdirectory should contain files with ground truth labelings and images similar
+    to what MIL-Track uses. 
+    As an example, see my track-data.zip file. 
+
+Then, you "should" be able to run it with a command similar to the following:
+      addpath(genpath('.')); matlab_init('coke11'); track = track_online('coke11');
+
