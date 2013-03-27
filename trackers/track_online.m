@@ -24,7 +24,7 @@ function [k_track,f1s] = track_online(vidName)
             % learn
             fprintf('track_olol: learning\n');
             model = Model('gen',vidName,[],[],[]);
-            model = model.train_all(vidName,k_track,lambda);
+            model = model.train_all(vidName,k_track2,lambda);
             
             % track
             [~,~,f1,~,k_track2] = track_dp(vidName,model); % DP-online

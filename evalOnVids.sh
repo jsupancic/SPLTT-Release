@@ -22,7 +22,7 @@ SERIAL='0'
 # $MATLAB -nodesktop -r "matlabpool close force; "
 # compile the shared components.
 # -nodisplay?
-$MATLAB -nodesktop -r "addpath(genpath('.'),'-END'); cluster('killall'); compile; exit;"
+$MATLAB -nodesktop -r "addpath(genpath('.'),'-END'); cluster_ctl('killall'); compile; exit;"
 
 # test the vids
 #for VID in 'volkswagen'
@@ -33,7 +33,7 @@ do
 
     if [ $SERIAL == 1 ]
     then
-	SETUP="$INIT addpath(genpath('.')); cluster('on'); vidName='$VID';"
+	SETUP="$INIT addpath(genpath('.')); cluster_ctl('on'); vidName='$VID';"
     else
 	SETUP="$INIT addpath(genpath('.')); vidName='$VID';"
     fi
@@ -41,7 +41,7 @@ do
     FINISH="save('~/tmp/matlabTrack/track_$ID.mat','vidName','track'); "
     F1FILE="['~/tmp/matlabTrack/f1=' num2str(f1) '_$ID.mat']"
     CMP_F1="f1 = score_track_file(vidName,track); save($F1FILE,'f1');"
-    PROG="$SETUP $RUN $FINISH $CMP_F1 cluster('off'); exit;"
+    PROG="$SETUP $RUN $FINISH $CMP_F1 cluster_ctl('off'); exit;"
     echo $PROG
     #$MATLAB -nosplash -nodesktop -r '$PROG'
     screen -d -m -S $FUNC$VID nice -n 10 $MATLAB -nodisplay -nosplash -nodesktop -r "$PROG"
