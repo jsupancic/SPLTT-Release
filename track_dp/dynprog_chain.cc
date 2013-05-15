@@ -1,7 +1,7 @@
 // JSS3 - 2012-6-21 
 #include "mex.h"
 #include "matrix.h"
-#include <stdint.h>
+#include "compat.h"
 #include <limits>
 #include <math.h>
 #include <vector>

@@ -1,5 +1,5 @@
 #include <math.h>
-#include <stdint.h>
+#include "compat.h"
 #include "mex.h"
 #include "matrix.h"
 
