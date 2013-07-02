@@ -19,7 +19,7 @@ function [model,Jpos,C] = matlab_init(vidName)
     
     %  where to save stuff?
     global G_LOG_PREFIX;
-    G_LOG_PREFIX = ['~/tmp/matlabTrack/' date() num2str(now()) ...
+    G_LOG_PREFIX = [cfg('tmp_dir') date() num2str(now()) ...
                    '-' vidName '-'];
     
     % compile?

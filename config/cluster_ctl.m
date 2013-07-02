@@ -33,7 +33,7 @@ function on = cluster_ctl(option,jobDesc,cores)
     % don't give the client more cores than it requested.
     if strcmp(option,'on')        
         matlabpool open;
-    elseif strcmp(option,'off')
+    elseif strcmp(option,'off') && matlabpool('size') > 0
         matlabpool close;
     elseif strcmp(option,'killall')
         matlabpool close;

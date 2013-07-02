@@ -36,7 +36,7 @@ classdef DPTracker
             end
             
             % memoize for performance.
-            memo_cache = ['~/tmp/matlabTrack/track_dp_' ...
+            memo_cache = [cfg('tmp_dir') 'track_dp_' ...
                           obj.vidName model.hash() hashMat(old_boxes) ...
                           '.mat'];
             if exist(memo_cache,'file')
@@ -264,7 +264,7 @@ classdef DPTracker
         function marginals = min_marginals(obj,vidName,model)
             obj.vidName = vidName;
             %% memoize
-            memo = ['~/tmp/matlabTrack/min_marginals_' ...
+            memo = [cfg('tmp_dir') 'min_marginals_' ...
                     obj.vidName model.hash() '.mat'];
             if exist(memo,'file')
                 load(memo);

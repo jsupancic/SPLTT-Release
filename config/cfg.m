@@ -3,6 +3,8 @@
 function p = cfg(option)    
     if strcmp(option,'correct_overlap')
         p = .25;
+    elseif strcmp(option,'tmp_dir')
+        p = '~/tmp/matlabTrack/';
     elseif strcmp(option,'sample_negatives')
         % sample some negatives from around the positive
         % rather than search over all possible negatives.

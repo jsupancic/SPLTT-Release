@@ -1,6 +1,9 @@
 % JSS3 2012-04-11
 % rebuild the compiled components
 function compile()
+    % compile TLD's LK module.
+    addpath('3rd_party/TLD/');
+
     % Compile mex files
     % (a) mex version of features.m
     % (b) mex version of matlab's image resize

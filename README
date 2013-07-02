@@ -14,9 +14,13 @@ edit some of the matlab files in the config/ subdirectory.
     called with "off". 
 (3) You should be able to compile by simplying calling "compile.m". I've tested this on Linux
     and it should work on other OSs... I welcome patches. 
+(4) config/cfg.m : lets you stitch many of the parameters of the tracker. Of particular
+    interest will be the option 'tmp_dir'. You'll want to point this to an empty directory
+    which is writable. It is used for caching results. 
 
 Then, you "should" be able to run it with a command similar to the following:
       addpath(genpath('.')); matlab_init('coke11'); track = track_online('coke11');
 
 Alternatively, you might just use track_tbd('coke11'); which doesn't do any learning (after
   the first frame) or use a motion model. It is much faster and still performs quite well. 
+

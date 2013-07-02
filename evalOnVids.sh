@@ -38,8 +38,8 @@ do
 	SETUP="$INIT addpath(genpath('.')); vidName='$VID';"
     fi
     RUN="track = $FUNC(vidName);"
-    FINISH="save('~/tmp/matlabTrack/track_$ID.mat','vidName','track'); "
-    F1FILE="['~/tmp/matlabTrack/f1=' num2str(f1) '_$ID.mat']"
+    FINISH="save([cfg('tmp_dir') 'track_$ID.mat'],'vidName','track'); "
+    F1FILE="[cfg('tmp_dir') 'f1=' num2str(f1) '_$ID.mat']"
     CMP_F1="f1 = score_track_file(vidName,track); save($F1FILE,'f1');"
     PROG="$SETUP $RUN $FINISH $CMP_F1 cluster_ctl('off'); exit;"
     echo $PROG
