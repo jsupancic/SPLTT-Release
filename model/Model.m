@@ -222,9 +222,9 @@ classdef Model
             % dissallow training rectangles larger than the image.
             imsz = rect_size(rect_image(im));
             dtsz = rect_size(rectBtoK(B_bb));
-            if any(dtsz >= imsz)
+            if any(dtsz > imsz)
                 dtsz = dtsz
-                assert(~any(dtsz >= imsz));
+                assert(~any(dtsz > imsz));
             end
             
             featpyr = [];
