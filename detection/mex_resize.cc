@@ -28,7 +28,7 @@ void resize1dtran(double *src, int sheight, double *dst, int dheight,
   // we cache the interpolation values since they can be 
   // shared among different columns
   int len = (int)ceil(dheight*invscale) + 2*dheight;
-  alphainfo ofs[len];
+  alphainfo*ofs = static_cast<alphainfo*>(calloc(len,sizeof(alphainfo)));
   int k = 0;
   for (int dy = 0; dy < dheight; dy++) {
     double fsy1 = dy * invscale;
@@ -70,6 +70,8 @@ void resize1dtran(double *src, int sheight, double *dst, int dheight,
       alphacopy(s, d, ofs, k);
     }
   }
+
+  free(ofs);
 }
 
 // main function
