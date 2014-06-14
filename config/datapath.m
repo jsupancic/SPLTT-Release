@@ -9,6 +9,6 @@ function dp = datapath()
         HOME = getenv('HOME');
     end
     
-    dp = [HOME '/workspace/data/'];
+    dp = [HOME '/workspace/data/tracking/'];
     %dp
 end

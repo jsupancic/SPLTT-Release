@@ -15,7 +15,7 @@
 % You should have received a copy of the GNU General Public License
 % along with TLD.  If not, see <http://www.gnu.org/licenses/>.
 function lkcompile()    
-    [void,opencv_args] = unix('pkg-config --cflags --libs opencv')
+    [void,opencv_args] = unix('pkg-config --cflags --libs opencv | sed "s|/usr/lib64/libopencv_superres.so||g"')
     cmd = ['mex -g 3rd_party/TLD/lk.cpp -O ' opencv_args]
     eval(cmd);
     
