@@ -24,7 +24,7 @@ function scores = learn_tsvm_score(lambda,NStates,top_detections,...
     % matrix.
     cluster_ctl('on');
     spmd
-    setpath();
+    %setpath();
     progFrames = labindex:numlabs:(numel(top_detections));
     for frameIter = progFrames
         fprintf('learn_tsvm: computing scores for frame %d of %d\n',frameIter,numel(top_detections));

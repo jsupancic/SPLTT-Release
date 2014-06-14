@@ -14,7 +14,7 @@ function gts = gt_load(vidName)
     gts = [gts; zeros(pad,size(gts,2))];    
     
     % handle Kalal [x1 y1 x2 y2] format files.
-    if exist(['~/workspace/data/' vidName '/kalal'],'file')
+    if exist(['~/workspace/data/tracking/' vidName '/kalal'],'file')
         %'kalal format gt'
         gts = rectKtoB(gts);
     end
