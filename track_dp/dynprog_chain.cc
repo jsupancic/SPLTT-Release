@@ -1,7 +1,7 @@
 // JSS3 - 2012-6-21 
 #include "mex.h"
 #include "matrix.h"
-#include "compat.h"
+#include "../mex/compat.h"
 #include <limits>
 #include <math.h>
 #include <vector>
@@ -17,6 +17,10 @@ extern "C" mxArray *mxCreateSharedDataCopy(const mxArray *pr);
 
 #define OCCLUDED isnan
 #define INF (numeric_limits<double>::infinity())
+
+#ifndef round(x)
+    #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
+#endif
 
 static double rect_overlap(double newX1, double newY1, double newX2, double newY2, 
 			   double oldX1, double oldY1, double oldX2, double oldY2)

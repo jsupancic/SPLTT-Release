@@ -7,7 +7,7 @@
 #include "math.h"
 #include <vector>
 #include <limits>
-#include "compat.h"
+#include "../mex/compat.h"
 
 static const mwSize boxWidth = 5;
 
