@@ -3,6 +3,13 @@
 #include <string.h>
 #include "mex.h"
 
+#ifndef bzero
+    #define bzero(s,n) memset ((s), 0, (n))
+#endif
+#ifndef round
+    #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
+#endif
+
 // reduce(im) resizes im to half its size, using a 5-tap binomial filter for anti-aliasing
 // (see Burt & Adelson's Laplacian Pyramid paper)
 

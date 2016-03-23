@@ -3,6 +3,13 @@
 #include <string.h>
 #include "mex.h"
 
+#ifndef bzero
+    #define bzero(s,n) memset ((s), 0, (n))
+#endif
+#ifndef round
+    #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
+#endif
+
 // struct used for caching interpolation values
 struct alphainfo {
   int si, di;
