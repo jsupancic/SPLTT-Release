@@ -3,10 +3,10 @@
 #include <string.h>
 #include "mex.h"
 
-#ifndef bzero
+#ifndef bzero(s,n)
     #define bzero(s,n) memset ((s), 0, (n))
 #endif
-#ifndef round
+#ifndef round(x)
     #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
 #endif
 

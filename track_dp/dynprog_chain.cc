@@ -18,7 +18,7 @@ extern "C" mxArray *mxCreateSharedDataCopy(const mxArray *pr);
 #define OCCLUDED isnan
 #define INF (numeric_limits<double>::infinity())
 
-#ifndef round
+#ifndef round(x)
     #define round(x) (x<0?ceil((x)-0.5):floor((x)+0.5))
 #endif
 
